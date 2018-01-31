@@ -1,10 +1,3 @@
-/* 
- * File:   main.cpp
- * Author: emmahood
- *
- * Created on January 30, 2018, 2:29 PM
- */
-
 #include <iostream>
 #include<cmath>
 
@@ -23,19 +16,21 @@ int main ()
   double b, q [35], sum = 0;
   int n, i;
 
-  cout << endl << "What is |b|? ";
+  cout << endl << endl << "--Modeling of Log-Bow--" << endl << endl << "Input the perpendicular measurement";
+  cout << "of the log-bow , |b|, in inches to find the resulting measurements of each of the 36 pieces.";
+  cout << endl << endl << "What is |b|? ";
   cin >> b;
   b = abs(b);
   cout << endl;
 
-  for(n = 0; n <= 35; n++)
+  for(n = 0; n <= 18; n++)
   {
     q[n] = abs(function_1(b, (n + 1)) - function_1(b, n));
-    cout << "Q" << n + 1 << ": " << q[n] << endl;
+    q[35-n] = abs(function_1(b, (36-n)) - function_1(b, 35-n));
+    cout << "Q" << n + 1 << ": " << q[n] << "          Q" << 36 - n << ": " << q[35-n] << endl;
     sum = sum + q[n];
   }
 
-  cout << endl << endl << "Sum: " << sum/2;
 
   cout << endl << endl << endl;
 
